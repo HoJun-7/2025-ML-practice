@@ -15,10 +15,10 @@ from sklearn.metrics import classification_report, confusion_matrix
 """
 def load_data():
     
-    data = None
+    data = pd.read_csv("./data/dataset.csv")
     
-    X = None
-    y = None
+    X = data.drop('Class', axis=1)
+    y = data['Class']
     
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size = 0.2, random_state = 0)
     print(X, y)
@@ -32,11 +32,11 @@ def load_data():
 """
 def SVM(train_X, test_X, train_y, test_y):
     
-    svm = None
+    svm = SVC()
     
-    None
+    svm.fit(train_X, train_y)
     
-    pred_y = None
+    pred_y = svm.predict(test_X)
     
     return pred_y
     

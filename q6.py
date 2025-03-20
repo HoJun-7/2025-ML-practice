@@ -15,7 +15,7 @@ def load_data():
     
     print("데이터 확인해보기 :\n", X[:1])
     
-    train_X, test_X, train_y, test_y = None
+    train_X, test_X, train_y, test_y = train_test_split(X, y, test_size = 0.2, random_state = 0)
     
     return train_X, test_X, train_y, test_y
     
@@ -26,11 +26,11 @@ def load_data():
 """
 def Gaussian_NB(train_X, test_X, train_y, test_y):
     
-    model = None
+    model = GaussianNB()
     
-    None
+    model.fit(train_X, train_y)
     
-    predicted = None
+    predicted = model.predict(test_X)
     
     return predicted
     
