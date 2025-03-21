@@ -19,10 +19,10 @@ def bayes_theorem():
     p_confirm_ham = 2 / 12
     
     # 5. P( "스팸 메일" | "확인" ) 의 확률을 구하세요.
-    p_spam_confirm = 5 / 7
+    p_spam_confirm = p_confirm_spam * p_spam / (7/20)
     
     # 6. P( "정상 메일" | "확인" ) 의 확률을 구하세요.
-    p_ham_confirm = 2 /7
+    p_ham_confirm = p_confirm_ham * p_ham / (7/20)
     
     return p_spam_confirm, p_ham_confirm
 
