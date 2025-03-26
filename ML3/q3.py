@@ -46,7 +46,7 @@ def K_means():
     
     k_means = KMeans(init='random', n_clusters=3, random_state=0)
     
-    kmeans_label = k_means.fit(X_aniso)
+    kmeans_label = k_means.fit(X_aniso).labels_
     
     clusterDF['kmeans_label']=kmeans_label
     
@@ -80,7 +80,7 @@ def GMM():
     
     gmm = GaussianMixture(n_components=3, random_state=0)
     
-    gmm_label = gmm.fit(X_aniso)
+    gmm_label = gmm.fit(X_aniso).predict(X_aniso)
     
     clusterDF['gmm_label']=gmm_label
     
